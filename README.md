@@ -2,7 +2,8 @@
 
 1.Criar um site com  sistemas para comentários, abaixo um exemplo do layout:
 
-![image-20210622221843162](C:\Users\Rafael Noggueira\AppData\Roaming\Typora\typora-user-images\image-20210622221843162.png)
+![image](https://user-images.githubusercontent.com/80076927/123020005-fb0f1180-d3a7-11eb-8d3e-fa0b3ce42093.png)
+
 
 
 
