@@ -1,0 +1,87 @@
+{{header}}
+{{erro}}           
+<div class="card border-dark mx-auto mb-3 col-auto" style="width: 600px;">
+
+        <div class="card-header border-dark text-center text-dark"><b>
+            Cadastro de Usuários</b>
+        </div>
+        <form method="POST" action="cadastro" enctype="multipart/form-data" accept="image/png" class="p-3">
+          <div class="row mb-3">
+          
+            <div class="col-6">
+              <label for="nomecliente" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="nomecliente" name="nome"
+                value="" placeholder="Digite o nome..." required>
+            </div>
+            <div class="col-6">
+              <label for="sobrenomecliente" class="form-label">Sobrenome</label>
+              <input type="text" class="form-control" id="sobrenomecliente" name="sobrenome"
+                value="" placeholder="Digite o sobrenome..." required>
+            </div>
+           
+          </div> 
+          <div class="col-12 mb-3">
+              <label for="emailcliente" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="emailcliente" name="email"
+                value="" placeholder="Digite o e-mail..." required>
+            </div>
+          <div class="col row mb-3">
+            <div class="col-6">
+              <label for="senha" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="senha" name="senha"
+                 placeholder="Digite a senha..." required>
+            </div>
+            <div class="col-6 mb-3">
+              <label for="confirmasenha" class="form-label">Confirme a Senha</label>
+              <input type="password" class="form-control" id="confirmasenha" name="confirmasenha"
+                 placeholder="Confirme a senha..." required>
+            </div>
+            <div class="col-6 mb-3">
+              <label for="cidade" class="form-label">Cidade</label>
+              <input type="text" class="form-control" id="cidade" name="cidade"
+                value="" placeholder="Digite a cidade..." required>
+            </div>
+            <div class="col-6 mb-3">
+              <label for="estado" class="form-label">Estado</label>
+              <select class="form-select" id="estado" name="estado" required>
+                <option value=''>Selecione</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Carregar foto</label>
+              <input class="form-control" name="foto" accept='image/*' type="file" id="formFile">
+            </div>
+            <div class="d-grid gap-2 d-flex justify-content-center mt-3">
+              <button type="submit" name="cadastrar" class="btn btn-warning">Cadastrar</button>
+            </div>
+          </div>
+        </form>
+</div>
+{{footer}}

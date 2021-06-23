@@ -1,0 +1,212 @@
+{{header}}          
+{{erro}}
+{{logout}}
+<div {{display}}>
+    <div class="card border-dark mx-auto mb-3 col-auto" style="width: 600px;">
+            <div class="card-header border-dark text-center text-dark"><b>
+                Meu perfil</b>
+            </div>
+            <form method="POST" action="perfil" enctype="multipart/form-data" accept="image/png" class="p-3">
+            <div class="row mb-3">
+            <div class="col-12 text-center mb-4">
+                <img src='img/avatares/{{avatar}}.png' alt='mdo' width='200' height='200' class='rounded-circle mx-2'>
+            </div>
+                <div class="col-6">
+                <label for="nomecliente" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nomecliente" name="nome"
+                    value="{{nome}}" placeholder="Digite o nome..." disabled>
+                </div>
+                <div class="col-6">
+                <label for="sobrenomecliente" class="form-label">Sobrenome</label>
+                <input type="text" class="form-control" id="sobrenomecliente" name="sobrenome"
+                    value="{{sobrenome}}" placeholder="Digite o sobrenome..." disabled>
+                </div>           
+            </div> 
+            <div class="col-12 mb-3">
+                <label for="emailcliente" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="emailcliente" name="email"
+                    value="{{email}}" placeholder="Digite o e-mail..." disabled>
+                </div>  
+            <div class="col row mb-3">
+                
+                <div class="col-6 mb-3">
+                <label for="cidade" class="form-label">Cidade</label>
+                <input type="text" class="form-control" id="cidade" name="cidade"
+                    value="{{cidade}}" placeholder="Digite a cidade..." disabled>
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="cidade" class="form-label">Estado</label>
+                    <input type="text" class="form-control" id="cidade" name="cidade"
+                    value="{{estado}}" placeholder="Digite o estado..." disabled>
+                </div>           
+                <div class="d-grid gap-2 d-flex justify-content-center mt-3">                          
+                <button type="button" name="editar" class="btn btn-warning" type='button' data-bs-toggle='modal' data-bs-target='#editar'>Editar</button>
+                <button type="button" name="Excluir" class="btn btn-danger" type='button' data-bs-toggle='modal' data-bs-target='#excluir' {{disabled}}>Excluir conta</button>
+                <button type="button" name="Alterar" class="btn btn-primary" type='button' data-bs-toggle='modal' data-bs-target='#alterar'>Alterar senha</button>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div class='modal fade' id='editar' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+    <div class='modal-dialog modal-dialog-centered'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <h5 class='modal-title' id='exampleModalLabel'>Editar usuário</h5>
+                    <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+            </div>
+            <form method='POST' action='perfil'>
+                <div class='modal-body'>
+                    <div class='mb-3'>
+                        
+                        <div class="row mb-3">                            
+                            <div class="row mb-3">
+                                <div class="col-12 text-center mb-4">
+                                    <img src='img/avatares/{{avatar}}.png' alt='mdo' width='200' height='200' class='rounded-circle mx-2'>
+                                </div>
+                                    <div class="col-6">
+                                    <label for="nomecliente" class="form-label">Nome</label>
+                                    <input type="text" class="form-control" id="nomecliente" name="nome"
+                                        value="{{nome}}" placeholder="Digite o nome..." required>
+                                    </div>
+                                    <div class="col-6">
+                                    <label for="sobrenomecliente" class="form-label">Sobrenome</label>
+                                    <input type="text" class="form-control" id="sobrenomecliente" name="sobrenome"
+                                        value="{{sobrenome}}" placeholder="Digite o sobrenome..." required>
+                                    </div>           
+                                </div> 
+                                <div class="col-12 mb-3">
+                                    <label for="emailcliente" class="form-label">E-mail</label>
+                                    <input type="email" class="form-control" id="emailcliente" name="email"
+                                        value="{{email}}" placeholder="Digite o e-mail..." required>
+                                    </div>  
+                                <div class="col row mb-3">
+                                    
+                                    <div class="col-6 mb-3">
+                                    <label for="cidade" class="form-label">Cidade</label>
+                                    <input type="text" class="form-control" id="cidade" name="cidade"
+                                        value="{{cidade}}" placeholder="Digite a cidade..." required>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <label for="estado" class="form-label">Estado</label>
+                                        <select class="form-select" id="estado" name="estado" required>
+                                            <option value='{{estado}}'>{{estado}}</option>
+                                            <option value="AC">Acre</option>
+                                            <option value="AL">Alagoas</option>
+                                            <option value="AP">Amapá</option>
+                                            <option value="AM">Amazonas</option>
+                                            <option value="BA">Bahia</option>
+                                            <option value="CE">Ceará</option>
+                                            <option value="DF">Distrito Federal</option>
+                                            <option value="ES">Espírito Santo</option>
+                                            <option value="GO">Goiás</option>
+                                            <option value="MA">Maranhão</option>
+                                            <option value="MT">Mato Grosso</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MG">Minas Gerais</option>
+                                            <option value="PA">Pará</option>
+                                            <option value="PB">Paraíba</option>
+                                            <option value="PR">Paraná</option>
+                                            <option value="PE">Pernambuco</option>
+                                            <option value="PI">Piauí</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="RN">Rio Grande do Norte</option>
+                                            <option value="RS">Rio Grande do Sul</option>
+                                            <option value="RO">Rondônia</option>
+                                            <option value="RR">Roraima</option>
+                                            <option value="SC">Santa Catarina</option>
+                                            <option value="SP">São Paulo</option>
+                                            <option value="SE">Sergipe</option>
+                                            <option value="TO">Tocantins</option>
+                                        </select>
+                                      </div>           
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Carregar foto</label>
+                              <input class="form-control" name="foto" accept='image/*' type="file" id="formFile">
+                            </div>                            
+                          </div>
+
+
+                    </div>                                            
+                </div>
+            <div class='modal-footer'>                    
+                    <button type='submit' value='' name='editar' class='btn btn-primary'>Salvar alterações</button>
+                    <button type='button' class='btn btn-danger' data-bs-dismiss='modal'>Cancelar</button>
+            </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class='modal fade' id='excluir' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+    <div class='modal-dialog modal-dialog-centered'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <h5 class='modal-title' id='exampleModalLabel'>Excluir conta</h5>
+                    <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+            </div>
+            <form method='POST' action='perfil'>
+                <div class='modal-body'>
+                    <div class='mb-3'>
+                        
+                        <div class="col row mb-3">
+                            <div class="col-12 mb-3">
+                              <label for="senhaatual" class="form-label">Digite a senha para excluir sua conta</label>
+                              <input type="password" class="form-control" id="senhaatual" name="senhaatual"
+                                 placeholder="Insira sua senha..." required>
+                            </div>  
+                        </div>
+
+                    </div>                                            
+                </div>
+            <div class='modal-footer'>                    
+                    <button type='submit' value='' name='excluir' class='btn btn-danger'>Excluir</button>
+                    <button type='button' class='btn btn-primary' data-bs-dismiss='modal'>Cancelar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class='modal fade' id='alterar' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+    <div class='modal-dialog modal-dialog-centered'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                
+                <h5 class='modal-title' id='exampleModalLabel'>Alterar senha</h5>
+                    <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+            </div>
+            <form method='POST' action='perfil'>
+                <div class='modal-body'>
+                    <div class='mb-3'>
+                        
+                        <div class="col row mb-3">
+                            <div class="col-12 mb-3">
+                              <label for="senhaatual" class="form-label">Digite a senha atual</label>
+                              <input type="password" class="form-control" id="senhaatual" name="senhaatual"
+                                 placeholder="Senha atual..." required>
+                            </div>
+                            <div class="col-12 mb-3">
+                              <label for="senha" class="form-label">Nova senha</label>
+                              <input type="password" class="form-control" id="senha" name="novasenha"
+                                 placeholder="Digite a senha..." required>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="confirmasenha" class="form-label">Confirme a nova senha</label>
+                                <input type="password" class="form-control" id="confirmasenha" name="confirmasenha"
+                                   placeholder="Confirme a senha..." required>
+                            </div>
+                        </div>
+
+                    </div>                                            
+                </div>
+            <div class='modal-footer'>                    
+                    <button type='submit' value='' name='alterarsenha' class='btn btn-primary'>Salvar alteração</button>
+                    <button type='button' class='btn btn-danger' data-bs-dismiss='modal'>Cancelar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{footer}}
