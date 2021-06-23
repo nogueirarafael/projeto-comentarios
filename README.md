@@ -1,0 +1,1 @@
+1.Criar o apppara sistema de comentários, abaixo exemplo do layout:2.Funcionalidades da aplicação:a.Login de usuário;b.Cadastro de usuário;c.Publicar comentário;d.Editar comentário;e.Excluir comentário;f.Visualizar os comentários sem logar.g.Cadastro de imagem do usuário;h.Comentário anônimo;
