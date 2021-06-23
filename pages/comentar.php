@@ -20,6 +20,7 @@ if(isset($_POST['comentar'])){
     $id = $_POST["comentar"] ?? '';
     $idpublicacao = $_POST["comentar"] ?? '';
     $idusuario = $dados["id"] ?? 'anonimo';
+    $donopub = $_POST['donopub'];
     $comentario = $_POST["comentario"] ?? '';
     $nome = $dados["nome"] ?? 'Anônimo';
     $sobrenome = $dados["sobrenome"] ?? '';
@@ -43,6 +44,7 @@ if(isset($_POST['editar'])){
     $mensagem = $_POST["comentario"] ?? '';
     $datahora = date("d/m/Y")." às ".date("H:i:s")." (editado)";
     editarcomentario($idcomentario,$mensagem,$datahora); 
+    $donopub = $_POST['donopub'];
     $id = $_POST["idpublicacao"] ?? '';   
 }
 
@@ -136,6 +138,7 @@ function lercomentarios($id){
                                                     </div>
                                                 <div class='modal-footer'>
                                                     <input name='idpublicacao' value='{$publicacao->idpublicacao}' style='display: none;'>
+                                                    <input name='donopub' value='{$donopub}' style='display: none;'>
                                                         <button type='submit' value='{$publicacao->id}' name='editar' class='btn btn-primary'>Salvar alteração</button>
                                                         <button type='button' class='btn btn-danger' data-bs-dismiss='modal'>Cancelar</button>
                                                 </div>
@@ -178,7 +181,7 @@ function lercomentarios($id){
                                                     <div class='d-grid gap-2 d-md-flex'>
                                                         <div class='text-secondary fs-6 col-8 align-self-end'><i><small class='text-muted'>{$publicacao->datahora}</small></i></div>";
         if(($dados['id'] == $publicacao->idusuario or $dados['id'] == $donopub or $dados['id']=='1') and $dados['id'] != 'anonimo'){
-                $display='';
+                $display='block';
         if($dados['id'] != $publicacao->idusuario){
             $display = "none";
         }                
@@ -240,7 +243,7 @@ function excluircomentario($id){
  * @return string
  */
 function verificarpost() {
-    global $id;
+    global $id,$donopub;
     if(mensagem($id)==''){
     $retorno = "</div>
                     <div class='card text-center col-8 mt-5'>                                    
@@ -263,6 +266,7 @@ function verificarpost() {
                             </div>
                         <div class='d-flex flex-row mb-2 justify-content-center'>
                             <div class=''>
+                                <input name='donopub' value='{$donopub}' style='display: none;'>
                                 <button type='submit' name='comentar' value='{$id}' class='btn btn-primary shadow-sm'>Comentar</button>
                             </div>
                     </form>
