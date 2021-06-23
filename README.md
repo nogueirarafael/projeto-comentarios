@@ -13,15 +13,15 @@
 
 - [ ] Cadastro de usuário;
 
-- [ ] c.Publicar comentário;
+- [ ] Publicar comentário;
 
-- [ ] d.Editar comentário;
+- [ ] Editar comentário;
 
-- [ ] e.Excluir comentário;
+- [ ] Excluir comentário;
 
-- [ ] f.Visualizar os comentários sem logar.
+- [ ] Visualizar os comentários sem logar.
 
-- [ ] g.Cadastro de imagem do usuário;
+- [ ] Cadastro de imagem do usuário;
 
-- [ ] h.Comentário anônimo;
+- [ ] Comentário anônimo;
 
